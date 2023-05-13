@@ -39,15 +39,15 @@ public class Gmail extends Email {
         // If the given message is found in any mail in the inbox, move the mail to trash, else do nothing
         Mail m = null;
         int idx = -1;
-       for(int i=0;i<inbox.size();i++){
-         String mess = inbox.get(i).getMessage();
+       for(Mail mail : inbox){
+         String mess = mail.getMessage();
          if(mess.equals(message)){
-            m = inbox.get(i);
+            m = mail;
             trash.add(m);
 
          }
        }
-     if(idx!=-1)  inbox.remove(idx);
+     if(m!=null)  inbox.remove(m);
 
     }
 
