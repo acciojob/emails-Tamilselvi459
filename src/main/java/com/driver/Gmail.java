@@ -28,7 +28,7 @@ public class Gmail extends Email {
        if(inbox.size()<inboxCapacity){
            inbox.add(mail);
        }
-       else if (inbox.size()>= inboxCapacity){
+       else if (inbox.size()== inboxCapacity){
           Mail m = inbox.get(0);
           inbox.remove(0);
           trash.add(m);

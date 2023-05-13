@@ -42,8 +42,8 @@ public class Email {
                     if (c >= 90 && c <= 122){
                         issmall = true;
                     }
-                    if(c>=65 && c <=97) isCap = true;
-                    if(Character.isDigit(c)) isdigit = true;
+                   else if(c>=65 && c <=97) isCap = true;
+                   else if(Character.isDigit(c)) isdigit = true;
                     else isspecial = true;
                 }
                 if(isCap && issmall && isdigit && isspecial) this.password = newPassword;
