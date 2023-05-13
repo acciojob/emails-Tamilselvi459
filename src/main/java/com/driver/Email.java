@@ -45,7 +45,9 @@ public class Email {
                     if(Character.isDigit(c)) isdigit = true;
                     else isspecial = true;
                 }
+                if(isCap && issmall && isdigit && isspecial) this.password = newPassword;
             }
+
         }
     }
 }
