@@ -19,7 +19,8 @@ public class Email {
 
     }
 
-    public String getEmailId() {
+    public String getEmailId()
+    {
         return emailId;
     }
 
