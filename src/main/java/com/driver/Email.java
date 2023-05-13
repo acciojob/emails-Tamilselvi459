@@ -4,10 +4,19 @@ public class Email {
 
     private String emailId;
     private String password;
+    private boolean isCap;
+    private boolean issmall;
+    private boolean isdigit;
+    private boolean isspecial;
 
     public Email(String emailId){
         this.emailId = emailId;
         this.password = "Accio@123";
+        this.isCap = false;
+        this.issmall = false;
+        this.isdigit = false;
+        this.isspecial = false;
+
     }
 
     public String getEmailId() {
@@ -25,5 +34,18 @@ public class Email {
         // 3. It contains at least one lowercase letter
         // 4. It contains at least one digit
         // 5. It contains at least one special character. Any character apart from alphabets and digits is a special character
+        if(oldPassword.equals(this.password)){
+            if(newPassword.length()>=8) {
+                for (int i = 0; i < newPassword.length(); i++) {
+                    char c = newPassword.charAt(i);
+                    if (c >= 90 && c <= 122){
+                        issmall = true;
+                    }
+                    if(c>=65 && c <=97) isCap = true;
+                    if(Character.isDigit(c)) isdigit = true;
+                    else isspecial = true;
+                }
+            }
+        }
     }
 }
